@@ -45,17 +45,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=../CommonElements/Delay.c ../CommonElements/BSP.c main.c init_hardware.c ../CommonElements/draw.c
+SOURCEFILES_QUOTED_IF_SPACED=../CommonElements/Delay.c ../CommonElements/BSP.c main.c init_hardware.c ../CommonElements/draw.c snake.c "../../DemoSoft PIC32-MAXI-WEB v1.03/CommonElements/UartComm.c"
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1585333329/Delay.o ${OBJECTDIR}/_ext/1585333329/BSP.o ${OBJECTDIR}/main.o ${OBJECTDIR}/init_hardware.o ${OBJECTDIR}/_ext/1585333329/draw.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1585333329/Delay.o.d ${OBJECTDIR}/_ext/1585333329/BSP.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/init_hardware.o.d ${OBJECTDIR}/_ext/1585333329/draw.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1585333329/Delay.o ${OBJECTDIR}/_ext/1585333329/BSP.o ${OBJECTDIR}/main.o ${OBJECTDIR}/init_hardware.o ${OBJECTDIR}/_ext/1585333329/draw.o ${OBJECTDIR}/snake.o ${OBJECTDIR}/_ext/1580441080/UartComm.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1585333329/Delay.o.d ${OBJECTDIR}/_ext/1585333329/BSP.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/init_hardware.o.d ${OBJECTDIR}/_ext/1585333329/draw.o.d ${OBJECTDIR}/snake.o.d ${OBJECTDIR}/_ext/1580441080/UartComm.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/_ext/1585333329/Delay.o ${OBJECTDIR}/_ext/1585333329/BSP.o ${OBJECTDIR}/main.o ${OBJECTDIR}/init_hardware.o ${OBJECTDIR}/_ext/1585333329/draw.o
+OBJECTFILES=${OBJECTDIR}/_ext/1585333329/Delay.o ${OBJECTDIR}/_ext/1585333329/BSP.o ${OBJECTDIR}/main.o ${OBJECTDIR}/init_hardware.o ${OBJECTDIR}/_ext/1585333329/draw.o ${OBJECTDIR}/snake.o ${OBJECTDIR}/_ext/1580441080/UartComm.o
 
 # Source Files
-SOURCEFILES=../CommonElements/Delay.c ../CommonElements/BSP.c main.c init_hardware.c ../CommonElements/draw.c
+SOURCEFILES=../CommonElements/Delay.c ../CommonElements/BSP.c main.c init_hardware.c ../CommonElements/draw.c snake.c ../../DemoSoft PIC32-MAXI-WEB v1.03/CommonElements/UartComm.c
 
 
 CFLAGS=
@@ -116,6 +116,16 @@ ${OBJECTDIR}/_ext/1585333329/draw.o: ../CommonElements/draw.c  nbproject/Makefil
 	@${RM} ${OBJECTDIR}/_ext/1585333329/draw.o.d 
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1585333329/draw.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../Microchip/Include" -I"../Graphics_lib" -I"../CommonElements" -I"./" -Wall -MMD -MF "${OBJECTDIR}/_ext/1585333329/draw.o.d" -o ${OBJECTDIR}/_ext/1585333329/draw.o ../CommonElements/draw.c   
 	
+${OBJECTDIR}/snake.o: snake.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR} 
+	@${RM} ${OBJECTDIR}/snake.o.d 
+	@${FIXDEPS} "${OBJECTDIR}/snake.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../Microchip/Include" -I"../Graphics_lib" -I"../CommonElements" -I"./" -Wall -MMD -MF "${OBJECTDIR}/snake.o.d" -o ${OBJECTDIR}/snake.o snake.c   
+	
+${OBJECTDIR}/_ext/1580441080/UartComm.o: ../../DemoSoft\ PIC32-MAXI-WEB\ v1.03/CommonElements/UartComm.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/_ext/1580441080 
+	@${RM} ${OBJECTDIR}/_ext/1580441080/UartComm.o.d 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1580441080/UartComm.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../Microchip/Include" -I"../Graphics_lib" -I"../CommonElements" -I"./" -Wall -MMD -MF "${OBJECTDIR}/_ext/1580441080/UartComm.o.d" -o ${OBJECTDIR}/_ext/1580441080/UartComm.o "../../DemoSoft PIC32-MAXI-WEB v1.03/CommonElements/UartComm.c"   
+	
 else
 ${OBJECTDIR}/_ext/1585333329/Delay.o: ../CommonElements/Delay.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/_ext/1585333329 
@@ -141,6 +151,16 @@ ${OBJECTDIR}/_ext/1585333329/draw.o: ../CommonElements/draw.c  nbproject/Makefil
 	@${MKDIR} ${OBJECTDIR}/_ext/1585333329 
 	@${RM} ${OBJECTDIR}/_ext/1585333329/draw.o.d 
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1585333329/draw.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../Microchip/Include" -I"../Graphics_lib" -I"../CommonElements" -I"./" -Wall -MMD -MF "${OBJECTDIR}/_ext/1585333329/draw.o.d" -o ${OBJECTDIR}/_ext/1585333329/draw.o ../CommonElements/draw.c   
+	
+${OBJECTDIR}/snake.o: snake.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR} 
+	@${RM} ${OBJECTDIR}/snake.o.d 
+	@${FIXDEPS} "${OBJECTDIR}/snake.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../Microchip/Include" -I"../Graphics_lib" -I"../CommonElements" -I"./" -Wall -MMD -MF "${OBJECTDIR}/snake.o.d" -o ${OBJECTDIR}/snake.o snake.c   
+	
+${OBJECTDIR}/_ext/1580441080/UartComm.o: ../../DemoSoft\ PIC32-MAXI-WEB\ v1.03/CommonElements/UartComm.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/_ext/1580441080 
+	@${RM} ${OBJECTDIR}/_ext/1580441080/UartComm.o.d 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1580441080/UartComm.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../Microchip/Include" -I"../Graphics_lib" -I"../CommonElements" -I"./" -Wall -MMD -MF "${OBJECTDIR}/_ext/1580441080/UartComm.o.d" -o ${OBJECTDIR}/_ext/1580441080/UartComm.o "../../DemoSoft PIC32-MAXI-WEB v1.03/CommonElements/UartComm.c"   
 	
 endif
 

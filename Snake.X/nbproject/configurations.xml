@@ -13,6 +13,11 @@
       <itemPath>init_hardware.h</itemPath>
       <itemPath>includes.h</itemPath>
       <itemPath>../CommonElements/draw.h</itemPath>
+      <itemPath>../CommonElements/setup.h</itemPath>
+      <itemPath>snake.h</itemPath>
+      <itemPath>snake_part.h</itemPath>
+      <itemPath>direction.h</itemPath>
+      <itemPath>UartComm.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -28,6 +33,8 @@
       <itemPath>main.c</itemPath>
       <itemPath>init_hardware.c</itemPath>
       <itemPath>../CommonElements/draw.c</itemPath>
+      <itemPath>snake.c</itemPath>
+      <itemPath>../../DemoSoft PIC32-MAXI-WEB v1.03/CommonElements/UartComm.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -37,6 +44,7 @@
   </logicalFolder>
   <sourceRootList>
     <Elem>../CommonElements</Elem>
+    <Elem>../../DemoSoft PIC32-MAXI-WEB v1.03/CommonElements</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
