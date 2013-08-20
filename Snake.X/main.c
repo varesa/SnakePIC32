@@ -12,8 +12,13 @@
 #include "GenericTypeDefs.h"
 #include "Compiler.h"
 
+#include <plib.h>
+#include <peripheral/pmp.h>
+
 #include "Delay.h"
 #include "init_hardware.h"
+
+#include "draw.h"
 
 #include <Graphics/Graphics.h>
 #include <Graphics/Primitive.h>
@@ -44,31 +49,97 @@
 #pragma config FSRSSEL = PRIORITY_7		//SRS Interrupt Priority Level 7
 #pragma config FMIIEN = OFF, FETHIO = OFF	// external PHY in RMII/alternate configuration
 
-#define USE_DOUBLE_BUFFERING
-
-/*
- * 
- */
 int main(int argc, char** argv) {
 
     InitializeSystem();
 
+    UartCommInit();
+
+    initSnake();
     InitGraph();
+    initDraw();
 
+    UartCommPrintSafe("\fStarting Snake\n\r");
+    UartCommPrintSafe("Row2\n\r");
 
-    int k = 0;
+    Direction dir;
+    dir = UP;
+
+    int delay = 30;
+    int d;
+
+    int btn1 = 0;
+    //BIT btn2 = 0;
+    int btn3 = 0;
+
+    int i = 0;
 
     while(1) {
-        SetColor(WHITE);
-        ClearDevice();
+        UINT32 tmp;
+        tmp = ButtonsGet();
 
-        SetColor(BLACK);
-        Line(0, k, GetMaxX(), GetMaxY());
-        k++;
-        Line(10, 10, 200, 200);
+        if(tmp & BUTTON_1) { //rotate left
+            if(!btn3) {
+                switch(dir) { //TODO: Split to function rotate cw/ccw
+                    case UP:
+                        dir = RIGHT;
+                        break;
+                    case LEFT:
+                        dir = UP;
+                        break;
+                    case DOWN:
+                        dir = LEFT;
+                        break;
+                    case RIGHT:
+                        dir = DOWN;
+                        break;
+                }
+                btn3 = 1;
+                move(dir);
+                draw();
+                i = 0; //TODO: Split to function force-move
+            }
+        } else {
+            btn3 = 0;
+        }
 
+        if(tmp & BUTTON_3) { // rotate right
+            if(!btn1) {
+                switch(dir) {
+                    case UP:
+                        dir = LEFT;
+                        break;
+                    case LEFT:
+                        dir = DOWN;
+                        break;
+                    case DOWN:
+                        dir = RIGHT;
+                        break;
+                    case RIGHT:
+                        dir = UP;
+                        break;
+                }
+                btn1 = 1;
+                move(dir);
+                draw();
+                i = 0;
+            }
+        } else {
+            btn1 = 0;
+        }
 
-        DelayMs(1);
+        if (i == 9) {
+            move(dir);
+            draw();
+            i = 0;
+        }
+        i++;
+
+        for (d = 0; d < delay; d++) {
+            DelayMs(1);
+            ButtonsUpdate(PMDIN, TRUE);
+        }
+
     }
 
     return (EXIT_SUCCESS);

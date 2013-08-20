@@ -151,37 +151,4 @@ void ButtonsUpdate(UINT32 val, BOOL updated);
  *************************************************************************/
 void PotUpdate(int val);
 
-/*************************************************************************
- * Function Name: USBOTG_Overloaded(..)
- * Parameters:	none
- *
- * Return: TRUE if overload detected, FALSE if not
- *
- * Description: Detects an overload on the usb line
- *
- *************************************************************************/
-BOOL USBOTG_Overloaded(void);
-
-/*************************************************************************
- * Function Name: USBOTG_ReadID(..)
- * Parameters:	none
- *
- * Return: value on the USBID pin
- *
- * Description: Detects the state if the USBID pin
- *
- *************************************************************************/
-BOOL USBOTG_ReadID(void);
-
-/*************************************************************************
- * Function Name: USBOTG_PowerLine(..)
- * Parameters:	TRUE to power the USB line, FALSE to power OFF
- *
- * Return: none
- *
- * Description: Powers ON/OFF the usb line
- *
- *************************************************************************/
-void USBOTG_PowerLine(BOOL enable);
-
 #endif // _BSP_H

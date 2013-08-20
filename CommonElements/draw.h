@@ -5,21 +5,18 @@
  * Created on August 20, 2013, 12:09 AM
  */
 
-#include "../Snake.X/includes.h"
+#include "includes.h"
 
 #ifndef DRAW_H
 #define	DRAW_H
 
-#ifdef	__cplusplus
-extern "C" {
-#endif
+    BIT firstdraw;
 
-WORD GOLDrawCallback();
-WORD GOLMsgCallback(WORD objMsg, OBJ_HEADER* pObj, GOL_MSG *pMsg);
+    void initDraw();
+    void draw();
 
-#ifdef	__cplusplus
-}
-#endif
+    WORD GOLDrawCallback();
+    WORD GOLMsgCallback(WORD objMsg, OBJ_HEADER* pObj, GOL_MSG *pMsg);
 
 #endif	/* DRAW_H */
 

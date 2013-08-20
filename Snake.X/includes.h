@@ -8,25 +8,25 @@
 #ifndef INCLUDES_H
 #define	INCLUDES_H
 
-#ifdef	__cplusplus
-extern "C" {
-#endif
-
 #include <xc.h>
 #include "Compiler.h"
 #include <GenericTypeDefs.h>
 
+#include "Graphics/Graphics.h"
 #include "Graphics/GOL.h"
+
+#include "GraphicsConfig.h"
 
 #include "HardwareProfile.h"
 #include "BSP.h"
 #include "init_hardware.h"
+#include "UartComm.h"
 
+#include "setup.h"
 
-
-#ifdef	__cplusplus
-}
-#endif
+#include "snake_part.h"
+#include "snake.h"
+#include "direction.h"
 
 #endif	/* INCLUDES_H */
 
