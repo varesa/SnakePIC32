@@ -49,6 +49,20 @@
 #pragma config FSRSSEL = PRIORITY_7		//SRS Interrupt Priority Level 7
 #pragma config FMIIEN = OFF, FETHIO = OFF	// external PHY in RMII/alternate configuration
 
+void forceMove() {
+    move(dir);
+    draw();
+    i = 0;
+}
+
+void rotateCW() {
+    
+}
+
+void rotateCCW() {
+    
+}
+
 int main(int argc, char** argv) {
 
     InitializeSystem();
@@ -95,9 +109,6 @@ int main(int argc, char** argv) {
                         break;
                 }
                 btn3 = 1;
-                move(dir);
-                draw();
-                i = 0; //TODO: Split to function force-move
             }
         } else {
             btn3 = 0;
@@ -120,9 +131,7 @@ int main(int argc, char** argv) {
                         break;
                 }
                 btn1 = 1;
-                move(dir);
-                draw();
-                i = 0;
+                forceMove();
             }
         } else {
             btn1 = 0;
