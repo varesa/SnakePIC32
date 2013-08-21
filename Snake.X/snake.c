@@ -18,11 +18,11 @@ void move(Direction dir) {
     switch(dir) {
         case UP:
             newX = parts[arrayindex].x;
-            newY = parts[arrayindex].y + 1;
+            newY = parts[arrayindex].y - 1;
             break;
         case DOWN:
             newX = parts[arrayindex].x;
-            newY = parts[arrayindex].y - 1;
+            newY = parts[arrayindex].y + 1;
             break;
         case LEFT:
             newX = parts[arrayindex].x - 1;
